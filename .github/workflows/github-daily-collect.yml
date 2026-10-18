@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -48,7 +50,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/github-trending
           git commit -m "chore: update GitHub daily project snapshot" || exit 0
-          git push
+          git push origin HEAD:main
 
       - name: Upload snapshot artifact
         if: always()
