@@ -1,0 +1,59 @@
+name: Collect GitHub daily projects
+
+on:
+  schedule:
+    # 09:00 Asia/Shanghai = 01:00 UTC.
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+    inputs:
+      top_n:
+        description: 'How many Trending projects to collect'
+        required: false
+        default: '10'
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    env:
+      TOP_N: ${{ inputs.top_n || '10' }}
+      OUTPUT_ROOT: data/github-trending
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install parser dependency
+        run: |
+          mkdir -p .github/collector
+          npm install --prefix .github/collector --no-save linkedom
+
+      - name: Collect Trending and official repository data
+        continue-on-error: true
+        env:
+          PARSER_PACKAGE_JSON: .github/collector/package.json
+        run: |
+          mkdir -p data/github-trending
+          node scripts/collect-github-daily.mjs > data/github-trending/latest.json
+
+      - name: Commit snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/github-trending
+          git commit -m "chore: update GitHub daily project snapshot" || exit 0
+          git push
+
+      - name: Upload snapshot artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-daily-projects-${{ github.run_number }}
+          path: data/github-trending
+          if-no-files-found: warn
