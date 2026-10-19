@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "description": "Projects already introduced in existing published or pending Notion article drafts; seeded from the 2026-10-17, 2026-10-18, and 2026-10-19 articles to prevent repeats after the collector is enabled.",
+  "selectedProjects": [
+    {
+      "fullName": "MadsLorentzen/ai-job-search",
+      "selectedDate": "2026-10-17",
+      "selectionSource": "existing-notion-article"
+    },
+    {
+      "fullName": "anthropics/claude-plugins-official",
+      "selectedDate": "2026-10-17",
+      "selectionSource": "existing-notion-article"
+    },
+    {
+      "fullName": "affaan-m/ECC",
+      "selectedDate": "2026-10-17",
+      "selectionSource": "existing-notion-article"
+    },
+    {
+      "fullName": "anomalyco/opencode",
+      "selectedDate": "2026-10-19",
+      "selectionSource": "existing-notion-article"
+    },
+    {
+      "fullName": "cursor/plugins",
+      "selectedDate": "2026-10-19",
+      "selectionSource": "existing-notion-article"
+    },
+    {
+      "fullName": "ruvnet/ruflo",
+      "selectedDate": "2026-10-19",
+      "selectionSource": "existing-notion-article"
+    },
+    {
+      "fullName": "akitaonrails/ai-memory",
+      "selectedDate": "2026-10-19",
+      "selectionSource": "existing-notion-article"
+    },
+    {
+      "fullName": "stablyai/orca",
+      "selectedDate": "2026-10-19",
+      "selectionSource": "existing-notion-article"
+    },
+    {
+      "fullName": "HKUDS/CLI-Anything",
+      "selectedDate": "2026-10-19",
+      "selectionSource": "existing-notion-article"
+    },
+    {
+      "fullName": "debpalash/VoiceStudio",
+      "selectedDate": "2026-10-19",
+      "selectionSource": "existing-notion-article"
+    },
+    {
+      "fullName": "android/skills",
+      "selectedDate": "2026-10-19",
+      "selectionSource": "existing-notion-article"
+    }
+  ]
+}

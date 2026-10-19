@@ -19,7 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TOP_N: ${{ inputs.top_n || '10' }}
+      RANKING_N: '20'
       OUTPUT_ROOT: data/github-trending
+      GITHUB_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
