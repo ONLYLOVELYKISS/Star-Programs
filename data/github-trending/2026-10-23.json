@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "capturedAtChinaTime": "2026-10-23 13:37:34",
+  "source": "https://github.com/trending?since=daily",
+  "topN": 10,
+  "failureReason": "Trending returned 9 projects; expected 10.",
+  "projects": []
+}
