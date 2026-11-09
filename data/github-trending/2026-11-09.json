@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-09",
+  "capturedAtChinaTime": "2026-11-09 15:30:58",
+  "source": "https://github.com/trending?since=daily",
+  "topN": 10,
+  "failureReason": "504 Gateway Time-out: https://github.com/trending?since=daily",
+  "projects": []
+}
