@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-22",
+  "capturedAtChinaTime": "2026-11-22 15:39:45",
+  "source": "https://github.com/trending?since=daily",
+  "topN": 10,
+  "failureReason": "403 rate limit exceeded: https://api.github.com/repos/jingyaogong/minimind",
+  "projects": []
+}
